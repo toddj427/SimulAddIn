@@ -11,15 +11,20 @@ namespace SimulationAddIn
 {
     public partial class SimRibbon
     {
+        ConfigDataBL myConfigDataBL = null;
+        ConfigSheet myConfigSheet = new ConfigSheet();
+
+
         private void SimRibbon_Load(object sender, RibbonUIEventArgs e)
         {
+            myConfigDataBL = new ConfigDataBL();
 
         }
 
         private void btnModelPath_Click(object sender, RibbonControlEventArgs e)
         {
-            Worksheet currentSheet = Globals.ThisAddIn.GetActiveWorkSheet();
-            currentSheet.Range["A1"].Value = "Hello World";
+            myConfigDataBL.SetModelPath();
+            myConfigSheet.UpdateModelPath(myConfigDataBL);
         }
 
         private void btnInitialize_Click(object sender, RibbonControlEventArgs e)
@@ -34,8 +39,7 @@ namespace SimulationAddIn
                 return;
             }
 
-            ConfigSheet newConfig = new ConfigSheet();
-            newConfig.InitializeNewSheet();
+            myConfigSheet.InitializeNewSheet();
 
         }
     }

@@ -157,6 +157,7 @@
   -->
   <ItemGroup>
     <Compile Include="ConfigData.cs" />
+    <Compile Include="ConfigDataBL.cs" />
     <Compile Include="ConfigSheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

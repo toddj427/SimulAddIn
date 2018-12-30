@@ -13,6 +13,8 @@ namespace SimulationAddIn
     class ConfigSheet
     {
 
+        Excel.Worksheet configSheet = null;
+
         public ConfigSheet()
         {
 
@@ -25,8 +27,7 @@ namespace SimulationAddIn
             {
                 MessageBox.Show("About to delete the Configuration sheet");
             }
-            MessageBox.Show("About to create the Configuration sheet");
-            Excel.Worksheet configSheet = Globals.ThisAddIn.CreateNewSheet("Config");
+            configSheet = Globals.ThisAddIn.CreateNewSheet("Config");
 
             // Set up the colors
             configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeLeft].Color = 0x175108;
@@ -48,6 +49,18 @@ namespace SimulationAddIn
             configSheet.Range["C5"].Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
             configSheet.Range["D5"].Interior.Color = 0xFFFFFF;
             configSheet.Range["D5"].Cells.Name = "ModelPath";
+
+        }
+
+        internal void UpdateModelPath(ConfigDataBL myConfigDataBL)
+        {
+            if (!Globals.ThisAddIn.WorksheetExists("Config"))
+            {
+                MessageBox.Show("There is not a configuration sheet, please Initialize first.");
+                return;
+            }
+
+            configSheet.Range["ModelPath"].Value = myConfigDataBL.GetModelPath();
 
         }
     }
