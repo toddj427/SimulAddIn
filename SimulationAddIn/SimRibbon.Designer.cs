@@ -36,15 +36,19 @@
         {
             this.simTab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.ModelControl = this.Factory.CreateRibbonGroup();
             this.btnInitialize = this.Factory.CreateRibbonButton();
             this.btnModelPath = this.Factory.CreateRibbonButton();
+            this.BtnRunModel = this.Factory.CreateRibbonButton();
             this.simTab1.SuspendLayout();
             this.group1.SuspendLayout();
+            this.ModelControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // simTab1
             // 
             this.simTab1.Groups.Add(this.group1);
+            this.simTab1.Groups.Add(this.ModelControl);
             this.simTab1.Label = "Simulation";
             this.simTab1.Name = "simTab1";
             // 
@@ -54,6 +58,12 @@
             this.group1.Items.Add(this.btnModelPath);
             this.group1.Label = "Set Up";
             this.group1.Name = "group1";
+            // 
+            // ModelControl
+            // 
+            this.ModelControl.Items.Add(this.BtnRunModel);
+            this.ModelControl.Label = "Model Control";
+            this.ModelControl.Name = "ModelControl";
             // 
             // btnInitialize
             // 
@@ -75,6 +85,14 @@
             this.btnModelPath.ShowImage = true;
             this.btnModelPath.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnModelPath_Click);
             // 
+            // BtnRunModel
+            // 
+            this.BtnRunModel.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.BtnRunModel.Image = global::SimulationAddIn.Properties.Resources.Run;
+            this.BtnRunModel.Label = "Run Model";
+            this.BtnRunModel.Name = "BtnRunModel";
+            this.BtnRunModel.ShowImage = true;
+            // 
             // SimRibbon
             // 
             this.Name = "SimRibbon";
@@ -85,6 +103,8 @@
             this.simTab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
+            this.ModelControl.ResumeLayout(false);
+            this.ModelControl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -95,6 +115,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnModelPath;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInitialize;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup ModelControl;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnRunModel;
     }
 
     partial class ThisRibbonCollection

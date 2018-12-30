@@ -19,6 +19,7 @@ namespace SimulationAddIn
 
             fD = new FolderBrowserDialog();
             fD.Description = "Select the folder that contains or will contain the simulation model";
+            fD.SelectedPath = ConfigRep.ReadModelPathFromSheet();
             DialogResult result  = fD.ShowDialog();
 
             if (result == DialogResult.OK)
