@@ -26,7 +26,7 @@ namespace SimulationAddIn
             myConfigDataBL.SetModelPath();
         }
 
-        private void btnInitialize_Click(object sender, RibbonControlEventArgs e)
+        private void BtnInitialize_Click(object sender, RibbonControlEventArgs e)
         {
             string title = "Warning";
             string message = "This command will delete all previously set data and delete/recreate configuration sheets.  Do you want to continue?";
@@ -39,6 +39,23 @@ namespace SimulationAddIn
             }
 
             myConfigSheet.InitializeNewSheet();
+
+            // get permission, then set the model path.
+            title = "Step 2";
+            message = "Would you like to set the model path now?";
+            buttons = MessageBoxButtons.YesNo;
+            result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                myConfigDataBL.SetModelPath();
+            }
+
+            // Display a "done" message
+            title = "";
+            message = "Initialization is complete.";
+            buttons = MessageBoxButtons.OK;
+            MessageBox.Show(message, title, buttons);
+
 
         }
     }

@@ -26,11 +26,12 @@ namespace SimulationAddIn
 
         public void InitializeNewSheet()
         {
-            if (Globals.ThisAddIn.WorksheetExists("Config"))
+            if (Globals.ThisAddIn.WorksheetExists(ConfigRep.ConfigSheetName))
             {
                 MessageBox.Show("About to delete the Configuration sheet");
+                Globals.ThisAddIn.DeleteSheetByName(ConfigRep.ConfigSheetName);
             }
-            configSheet = Globals.ThisAddIn.CreateNewSheet("Config");
+            configSheet = Globals.ThisAddIn.CreateNewSheet(ConfigRep.ConfigSheetName);
 
             // Set up the colors
             configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeLeft].Color = 0x175108;

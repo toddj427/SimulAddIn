@@ -37,6 +37,20 @@ namespace SimulationAddIn
             }
         }
 
+        internal void DeleteSheetByName(string sheetName)
+        {
+            Excel.Worksheet worksheet = null;
+            try
+            {
+                worksheet = (Excel.Worksheet)Application.ActiveWorkbook.Worksheets[sheetName];
+            }
+            catch (Exception)
+            {
+                return;
+            }
+            worksheet.Delete();
+        }
+
         public bool WorksheetExists(string sheetName)
         {
             Excel.Worksheet worksheet = null;

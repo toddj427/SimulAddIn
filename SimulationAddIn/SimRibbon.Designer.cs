@@ -63,7 +63,7 @@
             this.btnInitialize.Label = "Initialize";
             this.btnInitialize.Name = "btnInitialize";
             this.btnInitialize.ShowImage = true;
-            this.btnInitialize.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInitialize_Click);
+            this.btnInitialize.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnInitialize_Click);
             // 
             // btnModelPath
             // 
