@@ -25,6 +25,18 @@ namespace SimulationAddIn
             return (Excel.Worksheet)Application.ActiveSheet;
         }
 
+        public Excel.Worksheet GetWorkSheetByName(string sheetName)
+        {
+            if (!WorksheetExists(sheetName))
+            {
+                return null;
+            }
+            else
+            {
+                return (Excel.Worksheet)Application.ActiveWorkbook.Worksheets[sheetName];
+            }
+        }
+
         public bool WorksheetExists(string sheetName)
         {
             Excel.Worksheet worksheet = null;

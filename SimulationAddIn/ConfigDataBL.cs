@@ -9,10 +9,8 @@ namespace SimulationAddIn
 {
     class ConfigDataBL
     {
-        public ConfigData configData { get; private set; }
         public ConfigDataBL()
         {
-            configData = new ConfigData();
         }
 
         public void SetModelPath()
@@ -25,13 +23,8 @@ namespace SimulationAddIn
 
             if (result == DialogResult.OK)
             {
-                configData.ModelPath = fD.SelectedPath;
+                ConfigRep.WriteModelPathToSheet(fD.SelectedPath);
             }
-        }
-
-        public string GetModelPath()
-        {
-            return configData.ModelPath;
         }
 
     }

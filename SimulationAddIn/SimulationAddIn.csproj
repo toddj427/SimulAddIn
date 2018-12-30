@@ -156,7 +156,7 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="ConfigData.cs" />
+    <Compile Include="ConfigRep.cs" />
     <Compile Include="ConfigDataBL.cs" />
     <Compile Include="ConfigSheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

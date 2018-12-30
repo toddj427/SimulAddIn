@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace SimulationAddIn
 {
+    // This class handles the formatting of the configuration sheet, including
+    // colors, fonts, cell and sheet protection and names
+    // data is handled by the config rep class
     class ConfigSheet
     {
 
@@ -52,16 +55,6 @@ namespace SimulationAddIn
 
         }
 
-        internal void UpdateModelPath(ConfigDataBL myConfigDataBL)
-        {
-            if (!Globals.ThisAddIn.WorksheetExists("Config"))
-            {
-                MessageBox.Show("There is not a configuration sheet, please Initialize first.");
-                return;
-            }
-
-            configSheet.Range["ModelPath"].Value = myConfigDataBL.GetModelPath();
-
-        }
+       
     }
 }

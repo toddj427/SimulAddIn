@@ -24,7 +24,6 @@ namespace SimulationAddIn
         private void btnModelPath_Click(object sender, RibbonControlEventArgs e)
         {
             myConfigDataBL.SetModelPath();
-            myConfigSheet.UpdateModelPath(myConfigDataBL);
         }
 
         private void btnInitialize_Click(object sender, RibbonControlEventArgs e)
