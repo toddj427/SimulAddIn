@@ -54,8 +54,14 @@ namespace SimulationAddIn
             configSheet.Range["D5"].Interior.Color = 0xFFFFFF;
             configSheet.Range["D5"].Cells.Name = "ModelPath";
 
+            // Add the model name cell
+            configSheet.Range["C6"].Value = "Model Name: ";
+            configSheet.Range["C6"].Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
+            configSheet.Range["D6"].Interior.Color = 0xFFFFFF;
+            configSheet.Range["D6"].Cells.Name = "ModelName";
+
         }
 
-       
+
     }
 }

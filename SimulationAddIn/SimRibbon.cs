@@ -48,15 +48,34 @@ namespace SimulationAddIn
             if (result == DialogResult.Yes)
             {
                 myConfigDataBL.SetModelPath();
-            }
 
+                // Set up the model name.
+                title = "Step 3";
+                message = "Would you like to set the model name?";
+                buttons = MessageBoxButtons.YesNo;
+                result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    myConfigDataBL.SetModelFile();
+                }
+
+            }
             // Display a "done" message
             title = "";
             message = "Initialization is complete.";
             buttons = MessageBoxButtons.OK;
             MessageBox.Show(message, title, buttons);
+        }
 
+        private void BtnRunmodel_Click(object sender, RibbonControlEventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet");
+        }
 
+        // Ask the user for the model name or the model executable file
+        private void BtnModelName_Click(object sender, RibbonControlEventArgs e)
+        {
+            myConfigDataBL.SetModelFile();
         }
     }
 }

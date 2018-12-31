@@ -39,6 +39,7 @@
             this.ModelControl = this.Factory.CreateRibbonGroup();
             this.btnInitialize = this.Factory.CreateRibbonButton();
             this.btnModelPath = this.Factory.CreateRibbonButton();
+            this.BtnModelName = this.Factory.CreateRibbonButton();
             this.BtnRunModel = this.Factory.CreateRibbonButton();
             this.simTab1.SuspendLayout();
             this.group1.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             this.group1.Items.Add(this.btnInitialize);
             this.group1.Items.Add(this.btnModelPath);
+            this.group1.Items.Add(this.BtnModelName);
             this.group1.Label = "Set Up";
             this.group1.Name = "group1";
             // 
@@ -84,6 +86,16 @@
             this.btnModelPath.ScreenTip = "Set Model Path";
             this.btnModelPath.ShowImage = true;
             this.btnModelPath.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnModelPath_Click);
+            // 
+            // BtnModelName
+            // 
+            this.BtnModelName.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.BtnModelName.Description = "Model Name";
+            this.BtnModelName.Image = global::SimulationAddIn.Properties.Resources.File;
+            this.BtnModelName.Label = "Model Name";
+            this.BtnModelName.Name = "BtnModelName";
+            this.BtnModelName.ShowImage = true;
+            this.BtnModelName.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnModelName_Click);
             // 
             // BtnRunModel
             // 
@@ -117,6 +129,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInitialize;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup ModelControl;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnRunModel;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnModelName;
     }
 
     partial class ThisRibbonCollection

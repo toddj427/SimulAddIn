@@ -28,6 +28,27 @@ namespace SimulationAddIn
             }
         }
 
+        public void SetModelFile()
+        {
+            OpenFileDialog fD;
+
+            fD = new OpenFileDialog();
+            fD.Title = "Select the model executable file";
+            fD.Filter = "Automod Executables|*.exe";
+            fD.InitialDirectory = ConfigRep.ReadModelPathFromSheet();
+            DialogResult result = fD.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+
+                string modelName = fD.FileName.Substring(0, fD.FileName.Length - 4);
+                while (modelName.IndexOf('\\')>0)
+                {
+                    modelName = modelName.Substring(modelName.IndexOf('\\') + 1);
+                }
+                ConfigRep.WriteAutoModFileToSheet(modelName);
+            }
+        }
     }
 
 

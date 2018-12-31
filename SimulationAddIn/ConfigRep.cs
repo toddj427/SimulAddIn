@@ -29,5 +29,12 @@ namespace SimulationAddIn
 
             return myConfigSheet.Range["ModelPath"].Value;
         }
+
+        internal static void WriteAutoModFileToSheet(string fileName)
+        {
+            Excel.Worksheet myConfigSheet = Globals.ThisAddIn.GetWorkSheetByName(ConfigSheetName);
+
+            myConfigSheet.Range["ModelName"].Value = fileName;
+        }
     }
 }
