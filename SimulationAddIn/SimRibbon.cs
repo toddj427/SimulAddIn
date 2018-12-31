@@ -21,11 +21,6 @@ namespace SimulationAddIn
 
         }
 
-        private void btnModelPath_Click(object sender, RibbonControlEventArgs e)
-        {
-            myConfigDataBL.SetModelPath();
-        }
-
         private void BtnInitialize_Click(object sender, RibbonControlEventArgs e)
         {
             string title = "Warning";
@@ -38,7 +33,7 @@ namespace SimulationAddIn
                 return;
             }
 
-            myConfigSheet.InitializeNewSheet();
+            myConfigSheet.CreateNewConfigSheet();
 
             // get permission, then set the model path.
             title = "Step 2";
@@ -49,17 +44,21 @@ namespace SimulationAddIn
             {
                 myConfigDataBL.SetModelPath();
 
-                // Set up the model name.
-                title = "Step 3";
-                message = "Would you like to set the model name?";
-                buttons = MessageBoxButtons.YesNo;
-                result = MessageBox.Show(message, title, buttons);
-                if (result == DialogResult.Yes)
-                {
-                    myConfigDataBL.SetModelFile();
-                }
-
             }
+
+            // Open question: Is it ok to set the model name if we haven't decided on a path?
+            // Maybe set things up to do both if the model already exists?
+
+            // Set up the model name.
+            title = "Step 3";
+            message = "Would you like to set the model name?";
+            buttons = MessageBoxButtons.YesNo;
+            result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                myConfigDataBL.SetModelFile();
+            }
+
             // Display a "done" message
             title = "";
             message = "Initialization is complete.";
@@ -67,9 +66,10 @@ namespace SimulationAddIn
             MessageBox.Show(message, title, buttons);
         }
 
-        private void BtnRunmodel_Click(object sender, RibbonControlEventArgs e)
+        // Ask the user for the path to the model
+        private void btnModelPath_Click(object sender, RibbonControlEventArgs e)
         {
-            MessageBox.Show("Not Implemented Yet");
+            myConfigDataBL.SetModelPath();
         }
 
         // Ask the user for the model name or the model executable file
@@ -77,5 +77,18 @@ namespace SimulationAddIn
         {
             myConfigDataBL.SetModelFile();
         }
+
+        private void BtnRunmodel_Click(object sender, RibbonControlEventArgs e)
+        {
+            ModelManagement myModel = new ModelManagement();
+            myModel.RunWithAnimation(false);
+        }
+
+
+        private void BtnRunWindowless_Click(object sender, RibbonControlEventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet");
+        }
+
     }
 }

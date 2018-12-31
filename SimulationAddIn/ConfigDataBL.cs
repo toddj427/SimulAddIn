@@ -7,12 +7,14 @@ using System.Windows.Forms;
 
 namespace SimulationAddIn
 {
+    // Used to manage the logic of the interface
     class ConfigDataBL
     {
         public ConfigDataBL()
         {
         }
 
+        // Get the model path from the user and store it
         public void SetModelPath()
         {
             FolderBrowserDialog fD;
@@ -28,6 +30,7 @@ namespace SimulationAddIn
             }
         }
 
+        // Get the model name from the user and store it
         public void SetModelFile()
         {
             OpenFileDialog fD;
@@ -50,6 +53,4 @@ namespace SimulationAddIn
             }
         }
     }
-
-
 }

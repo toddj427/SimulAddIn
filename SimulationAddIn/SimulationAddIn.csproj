@@ -159,6 +159,7 @@
     <Compile Include="ConfigRep.cs" />
     <Compile Include="ConfigDataBL.cs" />
     <Compile Include="ConfigSheet.cs" />
+    <Compile Include="ModelManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

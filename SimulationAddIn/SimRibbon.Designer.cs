@@ -36,11 +36,12 @@
         {
             this.simTab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.ModelControl = this.Factory.CreateRibbonGroup();
             this.btnInitialize = this.Factory.CreateRibbonButton();
             this.btnModelPath = this.Factory.CreateRibbonButton();
             this.BtnModelName = this.Factory.CreateRibbonButton();
+            this.ModelControl = this.Factory.CreateRibbonGroup();
             this.BtnRunModel = this.Factory.CreateRibbonButton();
+            this.BtnRunWindowless = this.Factory.CreateRibbonButton();
             this.simTab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.ModelControl.SuspendLayout();
@@ -60,12 +61,6 @@
             this.group1.Items.Add(this.BtnModelName);
             this.group1.Label = "Set Up";
             this.group1.Name = "group1";
-            // 
-            // ModelControl
-            // 
-            this.ModelControl.Items.Add(this.BtnRunModel);
-            this.ModelControl.Label = "Model Control";
-            this.ModelControl.Name = "ModelControl";
             // 
             // btnInitialize
             // 
@@ -97,6 +92,13 @@
             this.BtnModelName.ShowImage = true;
             this.BtnModelName.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnModelName_Click);
             // 
+            // ModelControl
+            // 
+            this.ModelControl.Items.Add(this.BtnRunModel);
+            this.ModelControl.Items.Add(this.BtnRunWindowless);
+            this.ModelControl.Label = "(Not Implemented)";
+            this.ModelControl.Name = "ModelControl";
+            // 
             // BtnRunModel
             // 
             this.BtnRunModel.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -104,6 +106,16 @@
             this.BtnRunModel.Label = "Run Model";
             this.BtnRunModel.Name = "BtnRunModel";
             this.BtnRunModel.ShowImage = true;
+            this.BtnRunModel.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnRunmodel_Click);
+            // 
+            // BtnRunWindowless
+            // 
+            this.BtnRunWindowless.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.BtnRunWindowless.Image = global::SimulationAddIn.Properties.Resources.Run;
+            this.BtnRunWindowless.Label = "Run w/o Animation";
+            this.BtnRunWindowless.Name = "BtnRunWindowless";
+            this.BtnRunWindowless.ShowImage = true;
+            this.BtnRunWindowless.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnRunWindowless_Click);
             // 
             // SimRibbon
             // 
@@ -130,6 +142,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup ModelControl;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnRunModel;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnModelName;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnRunWindowless;
     }
 
     partial class ThisRibbonCollection

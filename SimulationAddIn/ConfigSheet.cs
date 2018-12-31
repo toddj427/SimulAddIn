@@ -23,8 +23,8 @@ namespace SimulationAddIn
 
         }
 
-
-        public void InitializeNewSheet()
+        // Initialize the configuration sheet
+        public void CreateNewConfigSheet()
         {
             if (Globals.ThisAddIn.WorksheetExists(ConfigRep.ConfigSheetName))
             {

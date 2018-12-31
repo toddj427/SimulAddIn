@@ -11,10 +11,13 @@ using Office = Microsoft.Office.Core;
 
 namespace SimulationAddIn
 {
+    // Manage the storage and retrieval of the data
+    // It is a static class because it does not persist any of the data it is reading or writing
     static class ConfigRep
     {
         public const string ConfigSheetName = "Config";
 
+        #region ModelPath
         static public void WriteModelPathToSheet(string myModelPath)
         {
             Excel.Worksheet myConfigSheet = Globals.ThisAddIn.GetWorkSheetByName(ConfigSheetName);
@@ -29,12 +32,22 @@ namespace SimulationAddIn
 
             return myConfigSheet.Range["ModelPath"].Value;
         }
+        #endregion
 
+        #region ModelName
         internal static void WriteAutoModFileToSheet(string fileName)
         {
             Excel.Worksheet myConfigSheet = Globals.ThisAddIn.GetWorkSheetByName(ConfigSheetName);
 
             myConfigSheet.Range["ModelName"].Value = fileName;
         }
+
+        internal static string ReadAutoModFileFromSheet()
+        {
+            Excel.Worksheet myConfigSheet = Globals.ThisAddIn.GetWorkSheetByName(ConfigSheetName);
+
+            return myConfigSheet.Range["ModelName"].Value;
+        }
+        #endregion  
     }
 }
