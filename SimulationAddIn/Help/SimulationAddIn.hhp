@@ -1,0 +1,17 @@
+[OPTIONS]
+Auto TOC=9
+Compatibility=1.1 or later
+Compiled file=SimulationAddIn.chm
+Contents file=Table of Contents.hhc
+Default topic=HTML\SimulationAddIn.html
+Display compile progress=No
+Index file=Index.hhk
+Language=0x409 English (United States)
+Title=Simulation Add In
+
+
+[FILES]
+HTML\SimulationAddIn.html
+
+[INFOTYPES]
+
