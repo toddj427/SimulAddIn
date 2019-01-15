@@ -14,11 +14,20 @@ namespace SimulationAddIn
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+//            this.Application.SheetActivate += new Excel.AppEvents_SheetActivateEventHandler(Application_SheetActivate);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
         }
+
+        // The below method, along with the line in the startup adds the ability for the add-in to detect when the active sheet is changed.
+/*
+        void Application_SheetActivate(object sh)
+        {
+            System.Windows.Forms.MessageBox.Show("Sheet is activated");
+        }
+*/
 
         public Excel.Worksheet GetActiveWorkSheet()
         {

@@ -36,21 +36,25 @@
         {
             this.simTab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.ModelControl = this.Factory.CreateRibbonGroup();
+            this.grpHelp = this.Factory.CreateRibbonGroup();
             this.btnInitialize = this.Factory.CreateRibbonButton();
             this.btnModelPath = this.Factory.CreateRibbonButton();
             this.BtnModelName = this.Factory.CreateRibbonButton();
-            this.ModelControl = this.Factory.CreateRibbonGroup();
             this.BtnRunModel = this.Factory.CreateRibbonButton();
             this.BtnRunWindowless = this.Factory.CreateRibbonButton();
+            this.BtnHelp = this.Factory.CreateRibbonButton();
             this.simTab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.ModelControl.SuspendLayout();
+            this.grpHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // simTab1
             // 
             this.simTab1.Groups.Add(this.group1);
             this.simTab1.Groups.Add(this.ModelControl);
+            this.simTab1.Groups.Add(this.grpHelp);
             this.simTab1.Label = "Simulation";
             this.simTab1.Name = "simTab1";
             // 
@@ -61,6 +65,18 @@
             this.group1.Items.Add(this.BtnModelName);
             this.group1.Label = "Set Up";
             this.group1.Name = "group1";
+            // 
+            // ModelControl
+            // 
+            this.ModelControl.Items.Add(this.BtnRunModel);
+            this.ModelControl.Items.Add(this.BtnRunWindowless);
+            this.ModelControl.Label = "(Not Implemented)";
+            this.ModelControl.Name = "ModelControl";
+            // 
+            // grpHelp
+            // 
+            this.grpHelp.Items.Add(this.BtnHelp);
+            this.grpHelp.Name = "grpHelp";
             // 
             // btnInitialize
             // 
@@ -92,13 +108,6 @@
             this.BtnModelName.ShowImage = true;
             this.BtnModelName.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnModelName_Click);
             // 
-            // ModelControl
-            // 
-            this.ModelControl.Items.Add(this.BtnRunModel);
-            this.ModelControl.Items.Add(this.BtnRunWindowless);
-            this.ModelControl.Label = "(Not Implemented)";
-            this.ModelControl.Name = "ModelControl";
-            // 
             // BtnRunModel
             // 
             this.BtnRunModel.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -117,6 +126,15 @@
             this.BtnRunWindowless.ShowImage = true;
             this.BtnRunWindowless.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnRunWindowless_Click);
             // 
+            // BtnHelp
+            // 
+            this.BtnHelp.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.BtnHelp.Image = global::SimulationAddIn.Properties.Resources.helpicon;
+            this.BtnHelp.Label = "Help";
+            this.BtnHelp.Name = "BtnHelp";
+            this.BtnHelp.ShowImage = true;
+            this.BtnHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnHelp_Click);
+            // 
             // SimRibbon
             // 
             this.Name = "SimRibbon";
@@ -129,6 +147,8 @@
             this.group1.PerformLayout();
             this.ModelControl.ResumeLayout(false);
             this.ModelControl.PerformLayout();
+            this.grpHelp.ResumeLayout(false);
+            this.grpHelp.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -143,6 +163,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnRunModel;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnModelName;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnRunWindowless;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpHelp;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnHelp;
     }
 
     partial class ThisRibbonCollection

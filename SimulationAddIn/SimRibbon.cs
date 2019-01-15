@@ -90,5 +90,10 @@ namespace SimulationAddIn
             MessageBox.Show("Not Implemented Yet");
         }
 
+        private void BtnHelp_Click(object sender, RibbonControlEventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet");
+            Help.ShowHelp(null, "Help\\HTML\\SimulationAddIn.chm");
+        }
     }
 }
