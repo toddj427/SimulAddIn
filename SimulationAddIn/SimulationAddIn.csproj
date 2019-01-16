@@ -203,6 +203,7 @@
     <None Include="Help\HTML\SimulationAddIn.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Help\SimulationAddIn.hhp" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -242,6 +243,7 @@
     <None Include="Resources\File.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Help\HTML\InputSheets.html" />
     <Content Include="Help\HTML\SimulationAddIn.html" />
     <None Include="Resources\helpicon.jpg" />
   </ItemGroup>

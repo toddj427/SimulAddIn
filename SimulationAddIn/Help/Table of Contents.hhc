@@ -12,5 +12,13 @@
 		<param name="Name" value="Simulation Add In">
 		<param name="Local" value="HTML/SimulationAddIn.html">
 		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Quick Start">
+		<param name="Local" value="HTML/SimulationAddIn.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Input Sheets">
+		<param name="Local" value="HTML/InputSheets.html">
+		</OBJECT>
 </UL>
 </BODY></HTML>
