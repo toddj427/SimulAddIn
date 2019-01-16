@@ -33,12 +33,12 @@ namespace SimulationAddIn
             }
             configSheet = Globals.ThisAddIn.CreateNewSheet(ConfigRep.ConfigSheetName);
 
-            // Set up the colors
-            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeLeft].Color = 0x175108;
-            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeRight].Color = 0x175108;
-            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeTop].Color = 0x175108;
-            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeBottom].Color = 0x175108;
-            configSheet.Range["B2:E20"].Interior.Color = 0xAEE2A1;
+            // Set up the colors to use the Roar colors
+            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeLeft].Color = System.Drawing.Color.FromArgb(0, 42, 94);
+            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeRight].Color = System.Drawing.Color.FromArgb(0, 42, 94);
+            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeTop].Color = System.Drawing.Color.FromArgb(0, 42, 94);
+            configSheet.Range["B2:E20"].Borders[XlBordersIndex.xlEdgeBottom].Color = System.Drawing.Color.FromArgb(0, 42, 94);
+            configSheet.Range["B2:E20"].Interior.Color = System.Drawing.Color.FromArgb(0, 172, 228);
 
             // Set the configuration area title
             configSheet.Range["C3"].Value = "Simulation Configuration";
