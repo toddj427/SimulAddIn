@@ -197,6 +197,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ShuttleWizard\ShuttleWizard1.resx">
+      <DependentUpon>ShuttleWizard1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShuttleWizard\ShuttleWizard2.resx">
+      <DependentUpon>ShuttleWizard2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShuttleWizard\ShuttleWizard3.resx">
+      <DependentUpon>ShuttleWizard3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShuttleWizard\ShuttleWizard4.resx">
+      <DependentUpon>ShuttleWizard4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShuttleWizard\ShuttleWizard5.resx">
+      <DependentUpon>ShuttleWizard5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SimRibbon.resx">
       <DependentUpon>SimRibbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +227,36 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard1.Designer.cs">
+      <DependentUpon>ShuttleWizard1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard2.Designer.cs">
+      <DependentUpon>ShuttleWizard2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard3.Designer.cs">
+      <DependentUpon>ShuttleWizard3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard4.Designer.cs">
+      <DependentUpon>ShuttleWizard4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShuttleWizard\ShuttleWizard5.Designer.cs">
+      <DependentUpon>ShuttleWizard5.cs</DependentUpon>
+    </Compile>
     <Compile Include="SimRibbon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -221,7 +266,9 @@
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="SimulationAddIn_TemporaryKey.pfx" />
+    <None Include="SimulationAddIn_TemporaryKey.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
@@ -245,6 +292,7 @@
   <ItemGroup>
     <Content Include="Help\HTML\InputSheets.html" />
     <Content Include="Help\HTML\SimulationAddIn.html" />
+    <None Include="Resources\RackTemp.png" />
     <None Include="Resources\helpicon.jpg" />
   </ItemGroup>
   <PropertyGroup>
@@ -258,13 +306,14 @@
     <ManifestKeyFile>SimulationAddIn_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FD9BA9AA7D9156FC6F4A1E3A9F64ABB0198DA342</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>205D5AAA62D400DFDFD3EF4B2E4D0101B622D39D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>SimulationAddIn_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
