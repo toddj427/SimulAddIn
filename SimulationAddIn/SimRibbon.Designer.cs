@@ -42,15 +42,15 @@
             this.ModelControl = this.Factory.CreateRibbonGroup();
             this.BtnRunModel = this.Factory.CreateRibbonButton();
             this.BtnRunWindowless = this.Factory.CreateRibbonButton();
-            this.grpHelp = this.Factory.CreateRibbonGroup();
-            this.BtnHelp = this.Factory.CreateRibbonButton();
             this.ShuttleCreator = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.grpHelp = this.Factory.CreateRibbonGroup();
+            this.BtnHelp = this.Factory.CreateRibbonButton();
             this.simTab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.ModelControl.SuspendLayout();
-            this.grpHelp.SuspendLayout();
             this.ShuttleCreator.SuspendLayout();
+            this.grpHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // simTab1
@@ -125,6 +125,21 @@
             this.BtnRunWindowless.ShowImage = true;
             this.BtnRunWindowless.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnRunWindowless_Click);
             // 
+            // ShuttleCreator
+            // 
+            this.ShuttleCreator.Items.Add(this.button1);
+            this.ShuttleCreator.Label = "Shuttle Builder";
+            this.ShuttleCreator.Name = "ShuttleCreator";
+            // 
+            // button1
+            // 
+            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button1.Image = global::SimulationAddIn.Properties.Resources.RackTemp;
+            this.button1.Label = "Initialize";
+            this.button1.Name = "button1";
+            this.button1.ShowImage = true;
+            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            // 
             // grpHelp
             // 
             this.grpHelp.Items.Add(this.BtnHelp);
@@ -139,20 +154,6 @@
             this.BtnHelp.ShowImage = true;
             this.BtnHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnHelp_Click);
             // 
-            // ShuttleCreator
-            // 
-            this.ShuttleCreator.Items.Add(this.button1);
-            this.ShuttleCreator.Label = "Shuttle Builder";
-            this.ShuttleCreator.Name = "ShuttleCreator";
-            // 
-            // button1
-            // 
-            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button1.Image = global::SimulationAddIn.Properties.Resources.RackTemp;
-            this.button1.Label = "Initialize";
-            this.button1.Name = "button1";
-            this.button1.ShowImage = true;
-            // 
             // SimRibbon
             // 
             this.Name = "SimRibbon";
@@ -165,10 +166,10 @@
             this.group1.PerformLayout();
             this.ModelControl.ResumeLayout(false);
             this.ModelControl.PerformLayout();
-            this.grpHelp.ResumeLayout(false);
-            this.grpHelp.PerformLayout();
             this.ShuttleCreator.ResumeLayout(false);
             this.ShuttleCreator.PerformLayout();
+            this.grpHelp.ResumeLayout(false);
+            this.grpHelp.PerformLayout();
             this.ResumeLayout(false);
 
         }

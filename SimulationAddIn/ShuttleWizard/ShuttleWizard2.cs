@@ -12,9 +12,20 @@ namespace SimulationAddIn.ShuttleWizard
 {
     public partial class ShuttleWizard2 : Form
     {
+        ShuttleDataBL myShuttleData = null;
         public ShuttleWizard2()
         {
             InitializeComponent();
+        }
+
+        public ShuttleWizard2(ShuttleDataBL argShuttleData) : this()
+        {
+            myShuttleData = argShuttleData;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            myShuttleData.SetArcFolder();
         }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
+using SimulationAddIn.ShuttleWizard;
 
 namespace SimulationAddIn
 {
@@ -94,6 +95,13 @@ namespace SimulationAddIn
         {
             MessageBox.Show("Not Implemented Yet");
             Help.ShowHelp(null, "Help\\HTML\\SimulationAddIn.chm");
+        }
+
+        private void button1_Click(object sender, RibbonControlEventArgs e)
+        {
+            ShuttleWizard1 myShuttleWizard1 = new ShuttleWizard1();
+            myShuttleWizard1.Show();
+
         }
     }
 }

@@ -227,6 +227,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ShuttleConfigRep.cs" />
+    <Compile Include="ShuttleDataBL.cs" />
     <Compile Include="ShuttleWizard\ShuttleWizard1.cs">
       <SubType>Form</SubType>
     </Compile>
