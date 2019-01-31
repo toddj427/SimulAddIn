@@ -20,7 +20,10 @@ namespace SimulationAddIn
 
         public ConfigSheet()
         {
-
+            if (Globals.ThisAddIn.WorksheetExists(ConfigRep.ConfigSheetName))
+            {
+                configSheet = Globals.ThisAddIn.GetWorkSheetByName(ConfigRep.ConfigSheetName);
+            }
         }
 
         // Initialize the configuration sheet
@@ -62,6 +65,29 @@ namespace SimulationAddIn
 
         }
 
+        public void AddShuttleConfigs()
+        {
+            // Add the number of Aisles
+            configSheet.Range["C8"].Value = "Number of Aisles: ";
+            configSheet.Range["C8"].Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
+            configSheet.Range["D8"].Interior.Color = 0xFFFFFF;
+            configSheet.Range["D8"].Cells.Name = "NumAisles";
+            configSheet.Range["D8"].Cells.Value = 3;
 
+            // Add the number of Bays
+            configSheet.Range["C9"].Value = "Number of Bays: ";
+            configSheet.Range["C9"].Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
+            configSheet.Range["D9"].Interior.Color = 0xFFFFFF;
+            configSheet.Range["D9"].Cells.Name = "NumBays";
+            configSheet.Range["D9"].Cells.Value = 5;
+
+            // Add the number of Shelves
+            configSheet.Range["C10"].Value = "Number of Shelves: ";
+            configSheet.Range["C10"].Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
+            configSheet.Range["D10"].Interior.Color = 0xFFFFFF;
+            configSheet.Range["D10"].Cells.Name = "NumShelves";
+            configSheet.Range["D10"].Cells.Value = 3;
+
+        }
     }
 }

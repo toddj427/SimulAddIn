@@ -13,13 +13,12 @@ namespace SimulationAddIn
     public partial class SimRibbon
     {
         ConfigDataBL myConfigDataBL = null;
-        ConfigSheet myConfigSheet = new ConfigSheet();
-
+        ConfigSheet myConfigSheet = null;
 
         private void SimRibbon_Load(object sender, RibbonUIEventArgs e)
         {
+            myConfigSheet = new ConfigSheet();
             myConfigDataBL = new ConfigDataBL();
-
         }
 
         private void BtnInitialize_Click(object sender, RibbonControlEventArgs e)
