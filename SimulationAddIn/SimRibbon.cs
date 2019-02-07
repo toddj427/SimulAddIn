@@ -95,5 +95,11 @@ namespace SimulationAddIn
             MessageBox.Show("Not Implemented Yet");
             Help.ShowHelp(null, "Help\\HTML\\SimulationAddIn.chm");
         }
+
+        private void btnSheetSelector_Click(object sender, RibbonControlEventArgs e)
+        {
+            DHAMenu myDHAMenu = new DHAMenu();
+            myDHAMenu.Show();
+        }
     }
 }

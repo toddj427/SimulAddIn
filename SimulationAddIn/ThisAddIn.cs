@@ -87,6 +87,20 @@ namespace SimulationAddIn
             return newSheet;
         }
 
+        public Excel.Sheets GetWorkSheets()
+        {
+            Excel.Sheets theSheets = Application.ActiveWorkbook.Worksheets;
+            return theSheets;
+        }
+
+        public void GoToSheet(string sheetName)
+        {
+            if (WorksheetExists(sheetName))
+            {
+                Application.ActiveWorkbook.Sheets[sheetName].Select();
+            }
+        }
+
         #region VSTO generated code
 
         /// <summary>

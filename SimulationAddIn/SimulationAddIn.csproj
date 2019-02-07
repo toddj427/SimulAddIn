@@ -183,10 +183,28 @@
     <Compile Include="ConfigRep.cs" />
     <Compile Include="ConfigDataBL.cs" />
     <Compile Include="ConfigSheet.cs" />
+    <Compile Include="DataViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataViewer.Designer.cs">
+      <DependentUpon>DataViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DHAMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DHAMenu.Designer.cs">
+      <DependentUpon>DHAMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="DataViewer.resx">
+      <DependentUpon>DataViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DHAMenu.resx">
+      <DependentUpon>DHAMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -221,7 +239,7 @@
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="SimulationAddIn_TemporaryKey.pfx" />
+    <None Include="SimulationAddIn_1_TemporaryKey.pfx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.cs</DependentUpon>
     </None>
@@ -245,6 +263,7 @@
   <ItemGroup>
     <Content Include="Help\HTML\InputSheets.html" />
     <Content Include="Help\HTML\SimulationAddIn.html" />
+    <None Include="Resources\SheetIcon.png" />
     <None Include="Resources\helpicon.jpg" />
   </ItemGroup>
   <PropertyGroup>
@@ -255,16 +274,17 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SimulationAddIn_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SimulationAddIn_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FD9BA9AA7D9156FC6F4A1E3A9F64ABB0198DA342</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>14D81721FA6EE6F146D9BF80E730582DD9D8303B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>SimulationAddIn_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -43,6 +43,7 @@
             this.BtnModelName = this.Factory.CreateRibbonButton();
             this.BtnRunModel = this.Factory.CreateRibbonButton();
             this.BtnRunWindowless = this.Factory.CreateRibbonButton();
+            this.button1 = this.Factory.CreateRibbonButton();
             this.BtnHelp = this.Factory.CreateRibbonButton();
             this.simTab1.SuspendLayout();
             this.group1.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // grpHelp
             // 
+            this.grpHelp.Items.Add(this.button1);
             this.grpHelp.Items.Add(this.BtnHelp);
             this.grpHelp.Name = "grpHelp";
             // 
@@ -126,6 +128,15 @@
             this.BtnRunWindowless.ShowImage = true;
             this.BtnRunWindowless.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.BtnRunWindowless_Click);
             // 
+            // button1
+            // 
+            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button1.Image = global::SimulationAddIn.Properties.Resources.SheetIcon;
+            this.button1.Label = "SheetForm";
+            this.button1.Name = "button1";
+            this.button1.ShowImage = true;
+            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSheetSelector_Click);
+            // 
             // BtnHelp
             // 
             this.BtnHelp.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -165,6 +176,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnRunWindowless;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup grpHelp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton BtnHelp;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
     }
 
     partial class ThisRibbonCollection
