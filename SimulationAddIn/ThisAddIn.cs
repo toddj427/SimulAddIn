@@ -29,11 +29,14 @@ namespace SimulationAddIn
         }
 */
 
+        // Return the active worksheet
         public Excel.Worksheet GetActiveWorkSheet()
         {
             return (Excel.Worksheet)Application.ActiveSheet;
         }
 
+        // Get a worksheet pointer to the named worksheet 
+        // returns null if the worksheet does not exist
         public Excel.Worksheet GetWorkSheetByName(string sheetName)
         {
             if (!WorksheetExists(sheetName))
@@ -46,24 +49,21 @@ namespace SimulationAddIn
             }
         }
 
+        // This will remove the sheet named if it exists
         internal void DeleteSheetByName(string sheetName)
         {
-            Excel.Worksheet worksheet = null;
-            try
+            if (WorksheetExists(sheetName))
             {
-                worksheet = (Excel.Worksheet)Application.ActiveWorkbook.Worksheets[sheetName];
+                Excel.Worksheet worksheet = (Excel.Worksheet)Application.ActiveWorkbook.Worksheets[sheetName];
+                worksheet.Delete();
             }
-            catch (Exception)
-            {
-                return;
-            }
-            worksheet.Delete();
+            return;
         }
 
+        // Check to see if the worksheet exists
         public bool WorksheetExists(string sheetName)
         {
             Excel.Worksheet worksheet = null;
-            // ToDo: Add the ability to see if a worksheet exists by name without using a try/catch
             try
             {
                 worksheet = (Excel.Worksheet)Application.ActiveWorkbook.Worksheets[sheetName];
@@ -80,6 +80,7 @@ namespace SimulationAddIn
             return true;
         }
 
+        // Create a new sheet in the active workbook and give it the name passed in
         public Excel.Worksheet CreateNewSheet(string sheetName)
         {
             Excel.Worksheet newSheet = (Excel.Worksheet)Application.ActiveWorkbook.Sheets.Add();
@@ -87,12 +88,14 @@ namespace SimulationAddIn
             return newSheet;
         }
 
+        // Return a list of all worksheets for the active workbook
         public Excel.Sheets GetWorkSheets()
         {
             Excel.Sheets theSheets = Application.ActiveWorkbook.Worksheets;
             return theSheets;
         }
 
+        // Active the sheet that is named
         public void GoToSheet(string sheetName)
         {
             if (WorksheetExists(sheetName))

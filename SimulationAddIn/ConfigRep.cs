@@ -23,7 +23,6 @@ namespace SimulationAddIn
             Excel.Worksheet myConfigSheet = Globals.ThisAddIn.GetWorkSheetByName(ConfigSheetName);
 
             myConfigSheet.Range["ModelPath"].Value = myModelPath;
-
         }
 
         internal static string ReadModelPathFromSheet()
